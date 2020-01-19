@@ -14,6 +14,7 @@ public class PlayerController : MonoBehaviour
     public Transform trans;
     public Text text;
     public int speed=1000;
+    public Transform pl;
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -27,12 +28,24 @@ public class PlayerController : MonoBehaviour
     }
     private void FixedUpdate()
     {
-            rb.velocity = Vector2.zero;
-            rb.velocity = new Vector2(direction * Time.deltaTime * moveSpeed * speed/1000, 0);
+            if(pl.position.x<2.3&&pl.position.x>-2.3){
+                rb.velocity = Vector2.zero;
+                rb.velocity = new Vector2(direction * Time.deltaTime * moveSpeed * speed/1000, 0);
+            }
+            else{
+                //rb.velocity=Vector2.zero;
+                //rb.velocity=new Vector2(direction*Time.deltaTime*moveSpeed*speed/1000*-1,0);
+                trans.position=new Vector3(-1.48f,-3.57f,88.5f);
+            }
             speed=speed+1;
             if(speed>1000){
             	text.text="cout<<p--;\na. 12\nb. 10\nc. 21";
             }
+
+            if(speed>2000){
+                Application.LoadLevel(1);
+            }
+            
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
