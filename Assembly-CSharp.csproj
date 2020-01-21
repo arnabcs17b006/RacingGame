@@ -55,6 +55,7 @@
   <ItemGroup>
      <Compile Include="Assets\Scripts\changeScene.cs" />
      <Compile Include="Assets\Scripts\Hazard.cs" />
+     <Compile Include="Assets\Scripts\newHazard.cs" />
      <Compile Include="Assets\Scripts\optionScript.cs" />
      <Compile Include="Assets\Scripts\PlayerController.cs" />
      <Compile Include="Assets\Scripts\ScrollingBackground.cs" />
