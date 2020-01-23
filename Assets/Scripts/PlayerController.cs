@@ -47,22 +47,16 @@ public class PlayerController : MonoBehaviour
             else if(mainPothole.position.y<20){
                 Debug.Log("<20");
                 text.text="int  const * p=5;\nprintf(\"%d\",++(*p));\na. 10\nb. 20\nc. 30\n";
+                speed=speed+1;
             }
             else if(mainPothole.position.y<30){
                 Debug.Log("<30");
+                //Application.LoadLevel(2);
                 text.text="extern int i;\ni=20;\nprintf(\"%d\",i);\na. 10\nb. 20\nc. 30\n";
             }
-
-            // if(mainPothole.position.y<80){
-            //     Application.LoadLevel(1);
-            // }
-
-            
-            // if(mainPothole.position.y<(100)){
-            //     text.text="char *p;\ncout<<sizeof(*p);\na. 1\nb. 2\nc. 3\n";
-            // }
-            // if(mainPothole.position.y<(120)){
-            //     text.text="char *p;\ncout<<sizeof(p);\na. 6\nb. 8\nc. 10\n";
+            else if(mainPothole.position.y<40){
+                Application.LoadLevel(2);
+            }
             // }
             // if(mainPothole.position.y<(140)){
             //     text.text="cout<<(-1<<4);\na. -14\nb. -16\nc. -18\n";
